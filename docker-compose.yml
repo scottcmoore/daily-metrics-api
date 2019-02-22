@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  node:
+    build: .
+    environment:
+    # TODO: move these to an env file
+    # https://docs.docker.com/compose/environment-variables/
+      - DB_HOST=mysql
+      - DB_PASSWORD=secret
+      - DB_USER=default_user
+    volumes:
+        - ./:/usr/src/app
+    ports:
+      - "8000:8000"
+
+  mysql:
+    build:
+        context: ./mysql
+        args:
+            - MYSQL_DATABASE=default_database
+            - MYSQL_USER=default_user
+            - MYSQL_PASSWORD=secret
+            - MYSQL_ROOT_PASSWORD=root
+    #volumes:
+       # - ./data/mysql/:/var/lib/mysql
+    expose:
+        - "3306"
