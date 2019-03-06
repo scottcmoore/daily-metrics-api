@@ -1,7 +1,5 @@
 ## Runs with:
-# docker build -t ombud-test .
-# docker run --mount type=bind,source=$(pwd),target=/usr/src/app -p 49160:8080 -d ombud-test
-# curl -i localhost:49160
+
 
 FROM node:10
 

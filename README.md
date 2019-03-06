@@ -9,3 +9,6 @@ Right now this project is under construction and I'm working on infrastructure t
 
 ## Coming up
 I'll add handling for more metrics I'd like to track and start building a front end.
+
+## Run it:
+> docker-compose build && docker-compose up

@@ -14,16 +14,21 @@ const connection = mysql.createConnection({
     user     : 'default_user',
     password : 'secret'
 });
+
 connection.connect(function(err) {
-    
     if(err) {
-        res.send('Could not connect to MySQL ' + err.stack);
+        console.log('Could not connect to MySQL ' + err.stack);
     } else {
         console.log('Connected to MySQL.');
     }
 });
 
-// App:
+// Routes
+app.get('/', function(req, res) {
+    res.send("OK");
+});
+
+
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
-
