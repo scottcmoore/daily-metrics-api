@@ -4,6 +4,8 @@
   "description": "Node.js on Docker",
   "author": "Scott Moore <hello@scottcmoore.com",
   "main": "server.js",
+  "repository": "https://github.com/scottcmoore/shchi-da-kasha",
+  "license": "MIT",
   "directories": {
     "test": "test"
   },
