@@ -1,6 +1,3 @@
-## Runs with:
-
-
 FROM node:10
 
 # Create app directory
@@ -15,7 +12,7 @@ RUN npm install && npm install -g nodemon
 USER node
 
 # Bundle app source
-COPY --chown=node:node . .
+COPY --chown=node:node . /usr/src/app
 
 EXPOSE 8080
 
