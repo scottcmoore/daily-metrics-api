@@ -1,26 +1,20 @@
 version: '3.3'
 
 services:
-  mysql:
-    build:
-        context: ./mysql
-        args:
-            - MYSQL_DATABASE=default_database
-            - MYSQL_USER=default_user
-            - MYSQL_PASSWORD=secret
-            - MYSQL_ROOT_PASSWORD=root
+  db:
+    env_file:
+      - .env
     expose:
-        - "3306"
+      - "3306"
+    image: mysql:5.7
 
   node:
     build: .
-    environment:
-      - DB_HOST=mysql
-      - DB_PASSWORD=secret
-      - DB_USER=default_user
+    env_file:
+      - .env
     volumes:
         - ./:/usr/src/app
     ports:
       - "8000:8000"
     depends_on:
-      - "mysql"
+      - "db"

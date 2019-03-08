@@ -10,7 +10,7 @@ var knex = require('knex')({
     client: 'mysql',
     connection: {
         debug: true,
-        host : "mysql",
+        host : "db",
         user : 'default_user',
         password : 'secret',
         database : 'default_database'
