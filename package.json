@@ -1,10 +1,10 @@
 {
-  "name": "shchi-da-kasha",
+  "name": "daily-metrics-api",
   "version": "0.0.0",
   "description": "Node, Express, MySQL API",
   "author": "Scott Moore <hello@scottcmoore.com",
   "main": "server.js",
-  "repository": "https://github.com/scottcmoore/shchi-da-kasha",
+  "repository": "https://github.com/scottcmoore/daily-metrics-api",
   "license": "MIT",
   "directories": {
     "test": "test"
