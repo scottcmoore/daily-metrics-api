@@ -10,7 +10,7 @@ var knex = require('knex')({
     client: 'mysql',
     connection: {
         debug: true,
-        host : HOST,
+        host : "mysql",
         user : 'default_user',
         password : 'secret',
         database : 'default_database'
@@ -20,7 +20,13 @@ var knex = require('knex')({
 // Routes
 app.get('/', function(req, res) {
     console.log("Received a GET request to /");
-    res.send("OK");
+    res.send("/");
+});
+
+app.get('/weights', async function(req, res) {
+    console.log("Received a GET request to /weights");
+    const weights = await knex.select().from('weights');
+    res.json(weights);
 });
 
 
