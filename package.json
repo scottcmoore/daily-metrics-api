@@ -9,10 +9,9 @@
   "directories": {
     "test": "test"
   },
-
   "scripts": {
-    "migrate": "node_modules/.bin/knex migrate:rollback && node_modules/.bin/knex migrate:latest",
-    "start": "sleep 10 && npm run migrate && nodemon --legacy-watch server.js",
+    "migrate": "npx knex migrate:rollback && npx knex migrate:latest",
+    "start": "npm install && sleep 10 && npm run migrate && nodemon --legacy-watch server.js",
     "test": "mocha"
   },
   "dependencies": {

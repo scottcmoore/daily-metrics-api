@@ -3,10 +3,8 @@ FROM node:10
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# TODO: Does this need chown as well?
+# Copy the package first so npm install doesn't re-run on each code change
 COPY package*.json ./
-
 RUN npm install && npm install -g nodemon
 
 USER node
