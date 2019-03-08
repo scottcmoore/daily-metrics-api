@@ -16,4 +16,4 @@ COPY --chown=node:node . /usr/src/app
 
 EXPOSE 8080
 
-CMD [ "nodemon", "--legacy-watch", "server.js" ]
+CMD ["npm", "start"]

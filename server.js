@@ -6,25 +6,20 @@ const app = express();
 const PORT = 8000;
 const HOST = '0.0.0.0';
 
-// TODO: move this into its own file
-// Database connection:
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host     : 'mysql',
-    user     : 'default_user',
-    password : 'secret'
-});
-
-connection.connect(function(err) {
-    if(err) {
-        console.log('Could not connect to MySQL ' + err.stack);
-    } else {
-        console.log('Connected to MySQL.');
+var knex = require('knex')({
+    client: 'mysql',
+    connection: {
+        debug: true,
+        host : HOST,
+        user : 'default_user',
+        password : 'secret',
+        database : 'default_database'
     }
-});
+  });
 
 // Routes
 app.get('/', function(req, res) {
+    console.log("Received a GET request to /");
     res.send("OK");
 });
 
