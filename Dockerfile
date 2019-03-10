@@ -11,7 +11,3 @@ USER node
 
 # Bundle app source
 COPY --chown=node:node . /usr/src/app
-
-EXPOSE 8080
-
-CMD ["npm", "start"]
